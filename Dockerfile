@@ -9,6 +9,7 @@ COPY parse_output.py /
 COPY entry.sh /
 
 RUN apt-get update && \
-    apt-get install shellcheck
+    apt-get install -y shellcheck \
+                       python3-minimal
 
 ENTRYPOINT ["/entry.sh"]
