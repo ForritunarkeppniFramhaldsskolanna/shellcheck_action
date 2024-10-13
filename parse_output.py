@@ -28,7 +28,7 @@ for annotation in annotation_list:
     level = annotation[LEVEL]
     code = annotation[CODE]
     message = annotation[MESSAGE]
-    print(f"::error file={file_name},line={line},endLine={end_line},column={column},endColumn={end_column}::CS{code}: {message}")
+    print(f"::error file={file_name},line={line},endLine={end_line},column={column},endColumn={end_column}::SC{code} ({level}): {message}")
 
 if len(annotation_list) > 0:
     sys.exit(1)
