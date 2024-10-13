@@ -1,0 +1,21 @@
+name: 'Run Shellcheck'
+description: 'Run `shellcheck` to check spelling in one or more shell script files.'
+author: Arnar Bjarni Arnarson and Konráð Elí Sigurgeirsson
+branding:
+  icon: 'terminal'
+  color: 'black'
+inputs:
+  files:
+    description: 'Files which to run `shellcheck` on. Supports glob patterns.'
+    required: false
+    default: '**/*.sh'
+  args:
+    description: 'Arguments passed to `shellcheck`. Note that format must be JSON.'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - '${{ inputs.files }}'
+    - '${{ inputs.args }}'
