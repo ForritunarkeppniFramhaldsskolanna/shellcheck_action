@@ -5,11 +5,10 @@ ENV LANG=C.UTF-8
 ENV LANGUAGE=C.UTF-8
 ENV LC_ALL=C.UTF-8
 
-COPY parse_output.py /
-COPY entry.sh /
+COPY entry.py /
 
 RUN apt-get update && \
     apt-get install -y shellcheck \
                        python3-minimal
 
-ENTRYPOINT ["/entry.sh"]
+ENTRYPOINT ["/entry.py"]
