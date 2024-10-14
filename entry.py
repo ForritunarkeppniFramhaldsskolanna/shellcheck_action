@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import glob
 import json
+import os
 import shlex
 import subprocess
 import sys
@@ -32,7 +33,7 @@ if __name__ == "__main__":
         files.extend(glob.glob(token))
     
     if len(files) == 0:
-        print("Warning: No files specified.")
+        print(f"Warning! No files specified. Working directory is: {os.getcwd()} Directory contains: {os.listdir()}")
         sys.exit(0)
 
     shellcheck_args = sys.argv[2] if len(sys.argv) > 2 else ''
